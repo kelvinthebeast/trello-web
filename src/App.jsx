@@ -1,8 +1,14 @@
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
+
+import { Tabs } from '@mui/material'
 function App() {
   return (
     <>
+      <Tabs></Tabs>
+      <div>Hello day la co truong kelvin the beast</div>
+      <br />
+
       <div>Le Thanh Nhan</div>
       <Box
         component='form'
