@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography'
 function App() {
   return (
     <>
-      <Button>CLick the link to have s*x</Button>
+      <Button>CLick the link to have s*x </Button>
       <div>My name is Kelvin the beast</div>
       <Typography variant="body2" color="text.secondary">100000$</Typography>
       <br />
