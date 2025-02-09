@@ -1,6 +1,6 @@
-import { extendTheme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles'
 
-const theme = extendTheme({
+const theme = createTheme({
   colorSchemes: {
     light: {
       palette: {

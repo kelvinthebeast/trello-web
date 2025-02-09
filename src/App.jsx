@@ -1,25 +1,13 @@
 import { Box, TextField, Button } from '@mui/material'
-import { useColorScheme } from '@mui/material/styles'
-
-function ModeToggle() {
-  const { mode, setMode } = useColorScheme()
-  console.log(mode)
-  return (
-    <Button
-      onClick={() => {
-        setMode(mode === 'light' ? 'dark' : 'light')
-      }}
-    >
-      {mode === 'light' ? 'Turn dark' : 'Turn light'}
-    </Button>
-  )
-}
+// import { useColorScheme } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
 
 function App() {
   return (
     <>
-      <ModeToggle />
+      <Button>CLick the link to have s*x</Button>
       <div>My name is Kelvin the beast</div>
+      <Typography variant="body2" color="text.secondary">100000$</Typography>
       <br />
       <div>Kelvin Thanh</div>
       <Box
