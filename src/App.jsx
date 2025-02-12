@@ -7,7 +7,8 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
-
+import { IconButton, Badge } from '@mui/material'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
 function ModeSelect() {
   const { mode, setMode } = useColorScheme()
@@ -68,6 +69,12 @@ function ModeToggle() {
 function App() {
   return (
     <>
+      <IconButton aria-label="cart">
+        <Badge badgeContent={4} color="secondary">
+          <ShoppingCartIcon />
+        </Badge>
+      </IconButton>
+      <br/>
       <ModeSelect/>
       <br/>
       <ModeToggle/>
