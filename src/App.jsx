@@ -1,14 +1,12 @@
 
-import { Box, TextField, Button, FormControl, InputLabel, Select } from '@mui/material'
+import { Box, FormControl, InputLabel, Select, Container } from '@mui/material'
 import { MenuItem } from '@mui/material'
-import Typography from '@mui/material/Typography'
 import { useColorScheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
+
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
-import { IconButton, Badge } from '@mui/material'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+
 
 function ModeSelect() {
   const { mode, setMode } = useColorScheme()
@@ -48,53 +46,38 @@ function ModeSelect() {
   )
 }
 
-function ModeToggle() {
-  const { mode, setMode } = useColorScheme()
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-  const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)')
 
-  console.log('prefersDarkscheme: ', prefersDarkMode)
-  console.log('prefersLightMode: ', prefersLightMode)
-
-  return (
-    <Button
-      onClick={() => {
-        setMode(mode === 'light' ? 'dark' : 'light')
-      }}
-    >
-      {mode === 'light' ? 'Turn dark' : 'Turn light'}
-    </Button>
-  )
-}
 function App() {
   return (
-    <>
-      <IconButton aria-label="cart">
-        <Badge badgeContent={4} color="secondary">
-          <ShoppingCartIcon />
-        </Badge>
-      </IconButton>
-      <br/>
-      <ModeSelect/>
-      <br/>
-      <ModeToggle/>
-      <br />
-      <Button>CLick the link to have s*x </Button>
-      <div>My name is Kelvin the beast</div>
-      <Typography variant="body2" color="text.secondary">100000$</Typography>
-      <br />
-      <div>Kelvin Thanh</div>
-      <Box
-        component='form'
-        sx={{ '& > :not(style)': { m: 1, width: '25ch' } }}
-        noValidate
-        autoComplete='off'
-      >
-        <TextField id='outlined-basic' label='Outlined' variant='outlined' />
-        <TextField id='filled-basic' label='Filled' variant='filled' />
-        <TextField id='standard-basic' label='Standard' variant='standard' />
+    <Container disableGutters maxWidth={false} sx={{ height: '100vh', backgroundColor: 'primary.main' }}>
+      <Box sx={{
+        backgroundColor: 'primary.light',
+        width: '100%',
+        height: (theme) => theme.trello.appBarHeigh,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        <ModeSelect/>
       </Box>
-    </>
+      <Box sx= {{
+        backgroundColor: 'primary.dark',
+        width: '100%',
+        height: (theme) => theme.trello.boardBarHeight,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board Bar
+      </Box>
+      <Box sx= {{
+        backgroundColor: 'primary.main',
+        width: '100%',
+        height: (theme) => `calc(100vh - ${theme.trello.appBarHeigh} - ${theme.trello.boardBarHeight})`,
+        display: 'flex',
+        alignItems: 'center'
+      }}>
+        Board CONTENT
+      </Box>
+    </Container>
   )
 }
 
